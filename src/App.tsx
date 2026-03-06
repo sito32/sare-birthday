@@ -83,6 +83,13 @@ const ImageWithFallback = ({ src, alt, className, fallbackText }: { src: string,
       // Just in case it was named "flower" instead of "flowers"
       setCurrentSrc(src.replace('flowers.jpg', 'flower.jpg'));
       setAttempts(7);
+    } else if (attempts === 7 || (attempts === 6 && !src.includes('flowers'))) {
+      if (src.includes('sara-')) {
+        setCurrentSrc(src.replace('sara-', 'sare-'));
+        setAttempts(8);
+      } else {
+        setError(true);
+      }
     } else {
       setError(true);
     }
@@ -171,13 +178,13 @@ export default function App() {
   ];
 
   const gallery = [
-    { id: 1, span: "col-span-2 row-span-2", src: "/sare-purple-dress.jpg", alt: "Sare in purple dress", fallback: "Add sare-purple-dress.jpg to public folder" },
-    { id: 2, span: "col-span-1 row-span-1", src: "/sare-blue-floral.jpg", alt: "Sare in blue floral dress", fallback: "Add sare-blue-floral.jpg to public folder" },
-    { id: 3, span: "col-span-1 row-span-2", src: "/sare-dark-blue-night.jpg", alt: "Sare in dark blue dress at night", fallback: "Add sare-dark-blue-night.jpg to public folder" },
-    { id: 4, span: "col-span-1 row-span-1", src: "/sare-light-blue-close.jpg", alt: "Sare close up in light blue", fallback: "Add sare-light-blue-close.jpg to public folder" },
-    { id: 5, span: "col-span-2 row-span-1", src: "/sare-blue-dupatta-wind.jpg", alt: "Sare with blue dupatta in wind", fallback: "Add sare-blue-dupatta-wind.jpg to public folder" },
-    { id: 6, span: "col-span-1 row-span-1", src: "/sare-dark-blue-pink-flowers.jpg", alt: "Sare with pink flowers", fallback: "Add sare-dark-blue-pink-flowers.jpg to public folder" },
-    { id: 7, span: "col-span-1 row-span-1", src: "/sare-green-dress-selfie.jpg", alt: "Sare in green dress selfie", fallback: "Add sare-green-dress-selfie.jpg to public folder" },
+    { id: 1, span: "col-span-2 row-span-2", src: "/sara-purple-dress.jpg", alt: "Sara in purple dress", fallback: "Add sara-purple-dress.jpg to public folder" },
+    { id: 2, span: "col-span-1 row-span-1", src: "/sara-blue-floral.jpg", alt: "Sara in blue floral dress", fallback: "Add sara-blue-floral.jpg to public folder" },
+    { id: 3, span: "col-span-1 row-span-2", src: "/sara-dark-blue-night.jpg", alt: "Sara in dark blue dress at night", fallback: "Add sara-dark-blue-night.jpg to public folder" },
+    { id: 4, span: "col-span-1 row-span-1", src: "/sara-light-blue-close.jpg", alt: "Sara close up in light blue", fallback: "Add sara-light-blue-close.jpg to public folder" },
+    { id: 5, span: "col-span-2 row-span-1", src: "/sara-blue-dupatta-wind.jpg", alt: "Sara with blue dupatta in wind", fallback: "Add sara-blue-dupatta-wind.jpg to public folder" },
+    { id: 6, span: "col-span-1 row-span-1", src: "/sara-dark-blue-pink-flowers.jpg", alt: "Sara with pink flowers", fallback: "Add sara-dark-blue-pink-flowers.jpg to public folder" },
+    { id: 7, span: "col-span-1 row-span-1", src: "/sara-green-dress-selfie.jpg", alt: "Sara in green dress selfie", fallback: "Add sara-green-dress-selfie.jpg to public folder" },
   ];
 
   return (
@@ -264,7 +271,7 @@ export default function App() {
               </motion.div>
               
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#ff00a0] via-[#b200ff] to-[#00f0ff] drop-shadow-[0_0_20px_rgba(255,0,160,0.3)] pb-4 leading-tight">
-                Happy Birthday<br/>Sare!
+                Happy Birthday<br/>Sara!
               </h1>
               
               <p className="text-xl md:text-2xl text-white/80 font-light max-w-xl mx-auto md:mx-0 leading-relaxed">
@@ -280,10 +287,10 @@ export default function App() {
             >
               <div className="aspect-[4/5] w-full rounded-[2rem] overflow-hidden glass-card p-3 shadow-[0_0_40px_rgba(178,0,255,0.3)] border border-[#00f0ff]/30">
                 <ImageWithFallback 
-                  src="/sare-hero.jpg" 
-                  alt="Sare" 
+                  src="/sara-hero.jpg" 
+                  alt="Sara" 
                   className="w-full h-full object-cover rounded-[1.5rem]" 
-                  fallbackText="Add sare-hero.jpg to public folder"
+                  fallbackText="Add sara-hero.jpg to public folder"
                 />
               </div>
               <motion.div 
@@ -350,7 +357,7 @@ export default function App() {
                   Gallery of Grace
                 </h2>
                 <p className="text-lg text-white/60 text-center md:text-left">
-                  Capturing the beauty and elegance of Sare.
+                  Capturing the beauty and elegance of Sara.
                 </p>
               </div>
               <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#1a0b2e] shadow-[0_0_20px_rgba(255,0,160,0.3)] text-[#ff00a0] border border-[#ff00a0]/30">
@@ -389,7 +396,7 @@ export default function App() {
         <footer className="py-12 text-center relative z-20">
           <p className="text-white/40 font-medium flex items-center justify-center gap-2">
             <Star className="w-4 h-4 text-[#ff00a0]" /> 
-            Made with love for Sare 
+            Made with love for Sara 
             <Star className="w-4 h-4 text-[#ff00a0]" />
           </p>
         </footer>
